@@ -1,22 +1,18 @@
+#include <iostream>
 #ifndef LAB_7_8_USER_H
 #define LAB_7_8_USER_H
 #include "Book.h"
 #include "Loan.h"
 class User{
-protected:
+private:
     string username;
-
 public:
     User();
     User(User &);
     User(string);
-    ~User();
+    virtual ~User();
 
-    string get_name(){ return username;}
-
-    [[maybe_unused]]virtual void get_book(Book &book) = 0;
-
-    [[maybe_unused]]virtual void return_book(Book &book) = 0;
+    string get_username(){ return username;}
 };
 
 User::User():username(""){}
